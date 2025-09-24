@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    //id("kotlin-android-extensions") //Kotlin Extensions를 사용하기 위해 추가
 }
 
 android {
@@ -33,11 +34,22 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    //ViewBinding을 사용하기 위해 넣어야 하는 코드
+    buildFeatures {
+        viewBinding = true
+    }
+
+    //DataBinding을 사용하기 위해 넣어야 하는 코드
+    //buildFeatures {
+    //    dataBinding = true
+    //}
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.16.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
+    implementation ("androidx.core:core:1.12.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
