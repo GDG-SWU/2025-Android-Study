@@ -36,14 +36,14 @@ android {
     }
 
     //ViewBinding을 사용하기 위해 넣어야 하는 코드
-    buildFeatures {
-        viewBinding = true
-    }
+//    buildFeatures {
+//        viewBinding = true
+//    }
 
     //DataBinding을 사용하기 위해 넣어야 하는 코드
-    //buildFeatures {
-    //    dataBinding = true
-    //}
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {

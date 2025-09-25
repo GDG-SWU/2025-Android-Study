@@ -34,6 +34,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 //DataBinding
     //ViewBinding과 무엇이 다른가? -> 이름처럼 데이터를 연결해주는 역할을 할 수 있음 (데이터와 같이 결합해서 사용 가능)
 
+//DataBinding + ViewModel + LiveData
+
 class MainActivity : AppCompatActivity() {
 
     //데이터 바인딩 가능하도록 선언
