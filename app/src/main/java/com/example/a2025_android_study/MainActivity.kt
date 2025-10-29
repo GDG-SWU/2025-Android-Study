@@ -2,42 +2,32 @@ package com.example.a2025_android_study
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.util.Log
+import android.widget.Button
+import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.a2025_android_study.databinding.ActivityMainBinding
+
+// LiveData Transformations
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding : ActivityMainBinding
+    private lateinit var viewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        binding .vm = viewModel
+        binding.lifecycleOwner = this
 
-        val array = ArrayList<String>()
-
-        array.add("a")
-        array.add("b")
-        array.add("c")
-        array.add("a")
-        array.add("b")
-        array.add("c")
-        array.add("a")
-        array.add("b")
-        array.add("c")
-        array.add("a")
-        array.add("b")
-        array.add("c")
-        array.add("a")
-        array.add("b")
-        array.add("c")
-
-        val customAdapter = CustomAdapter(array)
-
-        val rv = findViewById<RecyclerView>(R.id.rv)
-        rv.adapter = customAdapter
-        rv.layoutManager = LinearLayoutManager(this)
-
+        binding.next.setOnClickListener {
+            viewModel.getNextData()
+        }
 
     }
-
-
 }
