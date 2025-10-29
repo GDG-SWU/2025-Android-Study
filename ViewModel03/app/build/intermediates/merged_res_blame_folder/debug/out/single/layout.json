@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.viewmodel03.app-mergeDebugResources-43:/layout/fragment_test.xml",
+        "source": "com.example.viewmodel03.app-main-46:/layout/fragment_test.xml"
+    },
+    {
+        "merged": "com.example.viewmodel03.app-mergeDebugResources-43:/layout/activity_main.xml",
+        "source": "com.example.viewmodel03.app-main-46:/layout/activity_main.xml"
+    }
+]
