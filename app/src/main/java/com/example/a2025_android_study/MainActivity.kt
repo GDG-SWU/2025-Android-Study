@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer // Observer 임포트
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.a2025_android_study.adapter.CustomAdapter
+import com.example.a2025_android_study.model.Post
 
 // Simple Retrofit Ex
 // https://jsonplaceholder.typicode.com/
@@ -13,36 +17,47 @@ import androidx.lifecycle.ViewModelProvider
 // https://jsonplaceholder.typicode.com/posts/3
 
 class MainActivity : AppCompatActivity() {
-    class MainActivity : AppCompatActivity() {
 
-        // 3. MainViewModel '클래스' 타입을 명시합니다.
-        lateinit var viewModel: MainViewModel
+    lateinit var viewModel : MainViewModel
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-            // 4. MainViewModel '클래스'를 ViewModelProvider에서 가져옵니다.
-            viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel.getPost1()
+        viewModel.getPostNumber(3)
+        viewModel.getPostAll()
 
-            // 5. 이제 viewModel이 올바른 타입이므로 함수 호출이 가능합니다.
-            viewModel.getPost1()
-            viewModel.getPostNumber(3)
+        val area1 = findViewById<TextView>(R.id.area1)
+        val area2 = findViewById<TextView>(R.id.area2)
 
-            // 6. TextView '클래스' 타입을 명시합니다.
-            val area1 = findViewById<TextView>(R.id.area1)
-            val area2 = findViewById<TextView>(R.id.area2)
+        viewModel.liveWord1.observe(this, Observer {
+            area1.text = it.toString()
+        })
 
-            // 7. 이제 viewModel이 올바른 타입이므로 LiveData에 접근 가능합니다.
-            viewModel.liveWord1.observe(this, Observer {
-                area1.text = it.toString()
-            })
+        viewModel.liveWord2.observe(this, Observer {
+            area2.text = it.toString()
+        })
 
-            viewModel.liveWord2.observe(this, Observer {
-                area2.text = it.toString()
-            })
-        }
+        val rv = findViewById<RecyclerView>(R.id.rv)
+
+        viewModel.liveWordList.observe(this, Observer {
+            val customAdapter = CustomAdapter(it as ArrayList<Post>)
+            rv.adapter = customAdapter
+            rv.layoutManager = LinearLayoutManager(this)
+        })
+
     }
+//            viewModel.liveWord1.observe(this, Observer {
+//                area1.text = it.toString()
+//            })
+//
+//            viewModel.liveWord2.observe(this, Observer {
+//                area2.text = it.toString()
+//            })
+//        }
+//    }
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //
 //        super.onCreate(savedInstanceState)
