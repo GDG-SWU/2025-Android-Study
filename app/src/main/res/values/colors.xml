@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="nectar_green">#53B175</color>
+
+    <color name="pulses_bg">#FEEFEA</color>
+    <color name="rice_bg">#E5F3EA</color>
 </resources>
