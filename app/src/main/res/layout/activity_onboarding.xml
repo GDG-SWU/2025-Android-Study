@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 비율 유지 배경 이미지 -->
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background" />
+
+        <!-- 가운데 정렬된 내용 -->
+        <LinearLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- 로고 -->
+            <ImageView
+                android:id="@+id/logo_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="35dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/logo_icon" />
+
+            <TextView
+                android:id="@+id/welcome_to_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_to_store"
+                android:textAppearance="@style/WelcomeTitle"
+                android:gravity="center"
+                android:layout_marginBottom="19dp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:text="@string/description_text"
+                android:textAppearance="@style/DescriptionText" />
+
+            <!-- Get Started 버튼-->
+            <Button
+                android:id="@+id/btn_get_started"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="#53B175"
+                android:padding="25dp"
+                android:text="@string/get_started"
+                android:textAppearance="@style/OnlineGrocText" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

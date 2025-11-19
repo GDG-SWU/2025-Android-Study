@@ -1,3 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">2025-Android-Study</string>
+
+    <!-- 로고 텍스트 -->
+    <string name="logo">Nectar</string>
+
+    <!-- 온보딩 문구 -->
+    <string name="online_groc">online groceriet</string>
+    <string name="welcome_to_store">Welcome\nto our store</string>
+    <string name="description_text">Get your groceries in as fast as one hour</string>
+    <string name="get_started">Get Started</string>
+
 </resources>
