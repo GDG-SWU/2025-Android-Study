@@ -24,7 +24,6 @@ class HomeActivity : AppCompatActivity() {
 
         // 3. RecyclerView에 LayoutManager와 어댑터 4개 연결
 
-        // --- 이 부분이 핵심입니다! ---
         rvExclusiveOffer.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvExclusiveOffer.adapter = exclusiveOfferAdapter
 
@@ -36,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
 
         rvBottomProducts.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvBottomProducts.adapter = bottomProductsAdapter
-        // --- 여기까지 ---
+
 
         // 4. 샘플 데이터 생성
         // (R.drawable.banana, R.drawable.apple 등이 drawable 폴더에 있어야 합니다!)
