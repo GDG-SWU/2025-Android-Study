@@ -22,65 +22,8 @@
             android:orientation="vertical"
             android:paddingBottom="24dp">
 
-            <ImageView
-                android:id="@+id/iv_top_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:src="@drawable/logo_icon_color"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="24dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="Nectar Logo" />
+            <include layout="@layout/layout_home_header" />
 
-            <LinearLayout
-                android:id="@+id/layout_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/location"
-                    app:tint="#4C4F4D"
-                    android:contentDescription="Location Pin" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dhaka, Banassre"
-                    android:textColor="#4C4F4D"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/search_bar_background"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="24dp"
-                android:padding="16dp"
-                android:gravity="center_vertical">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/find"
-                    app:tint="#7C7C7C"
-                    android:contentDescription="Search Icon" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Search Store"
-                    android:textColor="#7C7C7C"
-                    android:textSize="14sp"
-                    android:layout_marginStart="12dp"/>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,9 +108,9 @@
                 android:layout_marginStart="24dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_categories"
+                android:id="@+id/rv_groceries"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="120dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -177,7 +120,7 @@
                 tools:listitem="@layout/item_category" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_bottom_products"
+                android:id="@+id/rv_meat"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_marginTop="16dp"
