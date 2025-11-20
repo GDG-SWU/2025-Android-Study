@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">2025-Android-Study</string>
+
+
+    <string name="onbording_title">Welcome \nto our store</string>
+    <string name="onbording_text">Get your groceries as fast as one hour</string>
+    <string name="exclusive_offer">Exclusive Offer</string>
+    <string name="see_all">See all</string>
+    <string name="best_selling">Best Selling</string>
+    <string name="groceries_title">Groceries</string>
+
 </resources>
