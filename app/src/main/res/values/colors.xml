@@ -5,4 +5,5 @@
 
     <color name="main">#53B175</color>
     <color name="text">#181725</color>
+    <color name="text_grey">#7C7C7C</color>
 </resources>

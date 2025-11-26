@@ -29,6 +29,18 @@ class ProductAdapter (private val productList: List<Product>) : RecyclerView.Ada
         holder.Desc.text = product.unit
         holder.Price.text = product.price
         holder.productImage.setImageResource(product.imageRes)
+        holder.itemView.setOnClickListener {
+            val intent = android.content.Intent(holder.itemView.context, ProductDetailActivity::class.java)
+
+            intent.putExtra("name",product.name)
+            intent.putExtra("unit",product.unit)
+            intent.putExtra("price",product.price)
+            intent.putExtra("image",product.imageRes)
+
+            holder.itemView.context.startActivity(intent)
+        }
+
+
     }
 
     override fun getItemCount(): Int {
