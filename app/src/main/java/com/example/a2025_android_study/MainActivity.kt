@@ -1,5 +1,6 @@
 package com.example.a2025_android_study
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
@@ -19,7 +20,11 @@ class MainActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when(item.itemId){
                 R.id.nav_shop -> true
-                R.id.nav_explore -> true
+                R.id.nav_explore -> {
+                    val intent = Intent(this, ExploreActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 R.id.nav_cart -> true
                 R.id.nav_fav -> true
                 R.id.nav_account -> true
@@ -68,13 +73,19 @@ class MainActivity : AppCompatActivity() {
         )
 
         rvExclusive.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvExclusive.adapter = ProductAdapter(exclusiveOfferList)
+        rvExclusive.adapter = ProductAdapter(exclusiveOfferList){
+            product -> openDetail(product)
+        }
 
         rvBestSelling.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvBestSelling.adapter = ProductAdapter(bestSellingList)
+        rvBestSelling.adapter = ProductAdapter(bestSellingList){
+                product -> openDetail(product)
+        }
 
         rvProducts.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvProducts.adapter = ProductAdapter(groceriesList)
+        rvProducts.adapter = ProductAdapter(groceriesList){
+                product -> openDetail(product)
+        }
 
         // Category 샘플 데이터
         val categoryList = listOf(
@@ -84,5 +95,14 @@ class MainActivity : AppCompatActivity() {
 
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = CategoryAdapter(categoryList)
+    }
+
+    private fun openDetail(product: Product) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra("name", product.title)
+        intent.putExtra("qty", product.subTitle)
+        intent.putExtra("price", product.price)
+        intent.putExtra("image", product.imageRes)
+        startActivity(intent)
     }
 }

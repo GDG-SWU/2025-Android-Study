@@ -8,7 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ProductAdapter(private val products: List<Product>) :
+class ProductAdapter(private val products: List<Product>,
+    private val onItemClick: (Product) -> Unit) :
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,7 +36,7 @@ class ProductAdapter(private val products: List<Product>) :
 
         // 추가 버튼 클릭 이벤트
         holder.btnAdd.setOnClickListener {
-            // 나중에 추가
+            onItemClick(product)
         }
     }
 
