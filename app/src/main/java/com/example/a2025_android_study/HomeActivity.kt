@@ -86,12 +86,9 @@ class HomeActivity : AppCompatActivity() {
         groceryAdapter.submitList(groceryList)
         meatAdapter.submitList(meatList)
 
-        // ... (HomeActivity.kt 의 기존 코드 끝부분)
 
-        // 하단 네비게이션 클릭 리스너 설정
         val bottomNav = findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_navigation)
 
-        // 1. (선택사항) 앱 시작 시 Home 탭이 선택된 상태로 표시
         bottomNav.selectedItemId = R.id.nav_shop
 
         bottomNav.setOnItemSelectedListener { item ->
@@ -103,10 +100,8 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_explore -> {
                     val intent = Intent(this, ExploreActivity::class.java)
                     startActivity(intent)
-                    // finish()는 호출하지 않습니다. 뒤로가기로 다시 Home으로 돌아올 수 있게 합니다.
                     true
                 }
-                // ★ 여기를 추가해주세요!
                 R.id.nav_cart -> {
                     // CartActivity로 이동하는 Intent 생성
                     val intent = Intent(this, CartActivity::class.java)

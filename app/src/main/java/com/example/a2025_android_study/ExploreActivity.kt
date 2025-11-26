@@ -15,13 +15,12 @@ class ExploreActivity : AppCompatActivity() {
         // 1. 어댑터 생성
         val exploreAdapter = ExploreAdapter()
 
-        // 2. RecyclerView 설정 (2열 격자 모드)
+        // 2. RecyclerView 설정
         val rvExplore = findViewById<RecyclerView>(R.id.rv_explore)
         rvExplore.layoutManager = GridLayoutManager(this, 2) // spanCount = 2
         rvExplore.adapter = exploreAdapter
 
         // 3. 데이터 생성 (이름, 이미지, 배경색, 테두리색)
-        // 피그마 디자인과 유사한 색상 코드를 넣었습니다.
         val exploreList = listOf(
             ExploreItem("Fresh Fruits\n& Vegetable", R.drawable.find_fruites_vegetables, "#EEF8F2", "#53B175"), // 초록
             ExploreItem("Cooking Oil\n& Ghee", R.drawable.find_oil, "#FFF6EE", "#F8A44C"),       // 주황

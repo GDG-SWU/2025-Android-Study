@@ -22,7 +22,6 @@ class ExploreAdapter : ListAdapter<ExploreItem, ExploreAdapter.ExploreViewHolder
             nameTextView.text = item.name
             imageView.setImageResource(item.imageResId)
 
-            // ★ 핵심: 문자열로 된 색상 코드("#RRGGBB")를 실제 색상으로 변환하여 적용
             try {
                 val bgColor = Color.parseColor(item.backgroundColor)
                 val strokeColor = Color.parseColor(item.borderColor)
@@ -30,7 +29,7 @@ class ExploreAdapter : ListAdapter<ExploreItem, ExploreAdapter.ExploreViewHolder
                 cardView.setCardBackgroundColor(bgColor) // 배경색 변경
                 cardView.strokeColor = strokeColor       // 테두리색 변경
             } catch (e: Exception) {
-                e.printStackTrace() // 색상 코드가 잘못되었을 경우를 대비
+                e.printStackTrace()
             }
         }
     }

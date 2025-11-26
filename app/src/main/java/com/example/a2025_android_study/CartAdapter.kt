@@ -29,10 +29,8 @@ class CartAdapter(
         return CartViewHolder(view)
     }
 
-    // ★ [1] 부분 업데이트를 위한 함수 추가 (payloads가 있으면 여기로 옴)
     override fun onBindViewHolder(holder: CartViewHolder, position: Int, payloads: MutableList<Any>) {
         if (payloads.isNotEmpty()) {
-            // "수량만 바꿔!"라는 신호가 왔을 때
             if (payloads[0] == "UPDATE_QUANTITY") {
                 val item = cartList[position]
 

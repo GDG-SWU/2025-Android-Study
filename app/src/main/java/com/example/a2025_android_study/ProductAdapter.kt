@@ -19,7 +19,6 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Pr
         private val productPrice: TextView = itemView.findViewById(R.id.tv_product_price)
         private val addButton: ImageButton = itemView.findViewById(R.id.btn_add)
 
-        // (ProductAdapter.kt 내부)
         fun bind(product: Product) {
             productImage.setImageResource(product.imageResId)
             productName.text = product.name
@@ -30,11 +29,8 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductViewHolder>(Pr
                 // 1. CartManager에 1개 추가 (화면 이동 없음)
                 CartManager.addProduct(product, 1)
 
-                // (선택사항) 사용자에게 알림 띄우기
-                // Toast.makeText(itemView.context, "${product.name} 담기 완료!", Toast.LENGTH_SHORT).show()
             }
 
-            // ★ 클릭 시 상품 정보(이미지, 이름, 가격, 설명)를 Intent에 담아 보냅니다.
             itemView.setOnClickListener {
                 val context = itemView.context
                 val intent = android.content.Intent(context, ProductDetailActivity::class.java).apply {

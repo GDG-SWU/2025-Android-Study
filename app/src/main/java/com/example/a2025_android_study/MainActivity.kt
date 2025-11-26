@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             //OnboardingActivity로 실제로 이동하기
             startActivity(intent)
 
-            //MainActivity를 메모리에서 제거하기.
+            //MainActivity를 메모리에서 제거하기
             finish()
         }, 3000)
     }
