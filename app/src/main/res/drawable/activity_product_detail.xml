@@ -1,0 +1,46 @@
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layout_product_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:layout_marginTop="24dp"
+    app:layout_constraintTop_toBottomOf="@+id/img_product_main"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/text_detail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Naturel Red Apple"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_favourite" />
+
+    <TextView
+        android:id="@+id/text_detail_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1kg, Price"
+        android:textSize="14sp"
+        android:textColor="@color/nectar_gray_text"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_detail_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_favourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_heart"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="찜하기 버튼"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

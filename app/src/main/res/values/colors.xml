@@ -4,5 +4,28 @@
     <color name="white">#FFFFFFFF</color>
     <color name="nectar_green">#53B175</color>
     <color name="nectar_gray">#7C7C7C</color>
+    <color name="nectar_gray_text">#7C7C7C</color>
+
+    <color name="cat_green">#53B175</color>
+    <color name="cat_orange">#F8A44C</color>
+    <color name="cat_pink">#F7A593</color>
+    <color name="cat_purple">#D3B0E0</color>
+    <color name="cat_yellow">#FDE598</color>
+    <color name="cat_blue">#B7DFF5</color>
+
+    <color name="cat_green_full">#FF53B175</color>
+    <color name="cat_orange_full">#FFF8A44C</color>
+    <color name="cat_pink_full">#FFF7A593</color>
+    <color name="cat_purple_full">#FFD3B0E0</color>
+    <color name="cat_yellow_full">#FFFDE598</color>
+    <color name="cat_blue_full">#FFB7DFF5</color>
+
+    <color name="cat_green_25">#4053B175</color>
+    <color name="cat_orange_25">#40F8A44C</color>
+    <color name="cat_pink_25">#40F7A593</color>
+    <color name="cat_purple_25">#40D3B0E0</color>
+    <color name="cat_yellow_25">#40FDE598</color>
+    <color name="cat_blue_25">#40B7DFF5</color>
+
 
 </resources>
