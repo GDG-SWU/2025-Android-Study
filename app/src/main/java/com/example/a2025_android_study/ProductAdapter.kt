@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-
 class ProductAdapter (private val productList: List<Product>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
 
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -39,10 +38,7 @@ class ProductAdapter (private val productList: List<Product>) : RecyclerView.Ada
 
             holder.itemView.context.startActivity(intent)
         }
-
-
     }
-
     override fun getItemCount(): Int {
         return productList.size
     }
